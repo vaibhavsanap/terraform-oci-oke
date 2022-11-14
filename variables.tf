@@ -3,7 +3,6 @@
 
 # OCI Provider parameters
 variable "api_fingerprint" {
-  default     = ""
   description = "Fingerprint of the API private key to use with OCI API."
   type        = string
 }
@@ -23,7 +22,6 @@ variable "api_private_key_password" {
 }
 
 variable "api_private_key_path" {
-  default     = ""
   description = "The path to the OCI API private key."
   type        = string
 }
@@ -45,7 +43,6 @@ variable "region" {
 variable "tenancy_id" {
   description = "The tenancy id of the OCI Cloud Account in which to create the resources."
   type        = string
-  default     = ""
 }
 
 variable "tenancy_ocid" {
@@ -58,7 +55,6 @@ variable "tenancy_ocid" {
 variable "user_id" {
   description = "The id of the user that terraform will use to create the resources."
   type        = string
-  default     = ""
 }
 
 # Automatically populated by Resource Manager
@@ -74,7 +70,6 @@ variable "current_user_ocid" {
 variable "compartment_id" {
   description = "The compartment id where to create all resources."
   type        = string
-  default     = ""
 }
 
 # Automatically populated by Resource Manager
