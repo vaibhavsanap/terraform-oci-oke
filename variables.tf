@@ -22,6 +22,7 @@ variable "api_private_key_password" {
 }
 
 variable "api_private_key_path" {
+  default = ""
   description = "The path to the OCI API private key."
   type        = string
 }
