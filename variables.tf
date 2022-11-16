@@ -653,7 +653,7 @@ variable "image_signing_keys" {
 variable "check_node_active" {
   description = "check worker node is active"
   type        = string
-  default     = "none"
+  default     = "all"
 
   validation {
     condition     = contains(["none", "one", "all"], var.check_node_active)
@@ -670,17 +670,27 @@ variable "enable_pv_encryption_in_transit" {
 variable "cloudinit_nodepool" {
   description = "Cloudinit script specific to nodepool"
   type        = map(any)
-  default     = {}
+  default     = {
+    np1 = "/tmp/np1cloudinit.sh"
+  }
 }
 
 variable "cloudinit_nodepool_common" {
   description = "Cloudinit script common to all nodepool when cloudinit_nodepool  is not provided"
   type        = string
-  default     = ""
+  default     = "/tmp/commoncloudinit.sh"
 }
 
 variable "node_pools" {
-  default = {}
+  default = {
+    np1 = {
+        shape            = "VM.Standard.E4.Flex",
+        ocpus            = 2,
+        memory           = 32,
+        node_pool_size   = 1,
+        boot_volume_size = 150,
+    }
+  }
   description = "Tuple of node pools. Each key maps to a node pool. Each value is a tuple of shape (string),ocpus(number) , node_pool_size(number) and boot_volume_size(number)"
   type        = any
 }
