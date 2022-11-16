@@ -670,15 +670,13 @@ variable "enable_pv_encryption_in_transit" {
 variable "cloudinit_nodepool" {
   description = "Cloudinit script specific to nodepool"
   type        = map(any)
-  default     = {
-    np1 = "/tmp/np1cloudinit.sh"
-  }
+  default     = {}
 }
 
 variable "cloudinit_nodepool_common" {
   description = "Cloudinit script common to all nodepool when cloudinit_nodepool  is not provided"
   type        = string
-  default     = "/tmp/commoncloudinit.sh"
+  default     = ""
 }
 
 variable "node_pools" {
