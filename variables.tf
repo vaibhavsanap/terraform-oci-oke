@@ -247,7 +247,7 @@ variable "vcn_name" {
 
 # bastion host parameters
 variable "create_bastion_host" {
-  default     = true
+  default     = false
   description = "Whether to create a bastion host."
   type        = bool
 }
@@ -379,7 +379,7 @@ variable "bastion_service_target_subnet" {
 # operator host parameters
 
 variable "create_operator" {
-  default     = true
+  default     = false
   description = "Whether to create an operator server in a private subnet."
   type        = bool
 }
